@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+.root{
+    -fx-font-size: 9pt;
+    -fx-font-family: "Western";
+    -fx-background: rgb(225, 225, 80);
+}
+.button {
+  -fx-text-fill: white;
+  -fx-background-color: black;
+}
+
+.important {
+	-fx-font-weight: bold;
+}
+
+#tabNeuerUrlaubsantrag, #tabUrlaubsantraege {
+	-fx-font-weight: bold;
+}
+
+#tabNeuerUrlaubsantrag {
+	-fx-background-color: orange;
+}
+
+#tabUrlaubsantraege {
+	-fx-background-color: moccasin;
+}
+

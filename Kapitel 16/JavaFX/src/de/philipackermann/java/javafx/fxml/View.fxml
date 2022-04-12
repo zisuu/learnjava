@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+  fx:controller="de.philipackermann.java.javafx.fxml.Controller" >
+	<top>
+		<MenuBar fx:id="menuBar">
+		  <menus>
+		    <Menu text="Datei">
+		      <items>
+		        <MenuItem text="Öffnen" onAction="#handleOpen"/>
+		      </items>
+		    </Menu>
+		  </menus>
+		</MenuBar>
+	</top>
+</BorderPane>
