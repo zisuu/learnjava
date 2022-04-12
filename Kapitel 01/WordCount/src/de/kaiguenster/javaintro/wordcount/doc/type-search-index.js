@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"de.kaiguenster.javaintro.wordcount","l":"WordCount"}];updateSearchResults();
