@@ -1,3 +1,5 @@
+package Kap3;
+
 import java.io.*;
 
 /**
@@ -6,7 +8,7 @@ import java.io.*;
  * @author Dave
  * @version 1.0
  */
-public class App {
+public class StarTrek {
 
     static String[] filmTitel = new String[] { "The 300", "Horrible Bosses 2", "Detachement", "Intermission",
             "October Sky", "Moon", "Interstellar", "Shrek",
