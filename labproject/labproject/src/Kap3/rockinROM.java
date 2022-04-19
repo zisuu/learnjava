@@ -38,7 +38,8 @@ public class rockinROM {
                 programm = " Headliner: Delphi and the Oracles, Preis: 35 EUR";
                  break;
         default:
-            return programm = " FEHLER - Wochentag " + day + " unbekannt";
+            System.out.println(" FEHLER - Wochentag " + day + " unbekannt");
+            System.exit(1);
     }
     return programm;
 }
