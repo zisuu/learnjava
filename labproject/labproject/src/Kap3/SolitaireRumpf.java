@@ -1,7 +1,7 @@
 package Kap3;
 
 public class SolitaireRumpf {
-    
+
     public static boolean kannAnlegen(String farbeAlt, int wertAlt, String farbeNeu, int wertNeu) {
         boolean ergebnis = false;
 
@@ -23,6 +23,27 @@ public class SolitaireRumpf {
         } else {
             System.out.println(" ===> FALSCH");
         }
+    }
+
+    public static String kartenName(String farbe, int wert) {
+        String name = farbe + " ";
+        switch (wert) {
+            case 1:
+                name += "As";
+                break;
+            case 11:
+                name += "Bube";
+                break;
+            case 12:
+                name += "Dame";
+                break;
+            case 13:
+                name += "König";
+                break;
+            default:
+                name += wert;
+        }
+        return name;
     }
 
     public static void main(String[] args) {
