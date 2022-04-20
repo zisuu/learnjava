@@ -14,12 +14,30 @@ public class rockinROM2 {
     }
 
     public static String getProgramm(String day) {
-        String headliner = "";
         double price = 0;
         double priceSum = 0;
 
         switch (day) {
-            // skip Montag bis Freitag
+            case "Montag":
+                price = 37.50;
+                System.out.println("Rage against the Compiler" + ", Preis: " + price);
+                priceSum = priceSum + price;
+            case "Dienstag":
+                price = 22.0;
+                System.out.println("if/else" + ", Preis: " + price);
+                priceSum = priceSum + price;
+            case "Mittwoch":
+                price = 17.50;
+                System.out.println("The Falling Cases" + ", Preis: " + price);
+                priceSum = priceSum + price;
+            case "Donnerstag":
+                price = 21.0;
+                System.out.println("Blinkenlichten" + ", Preis: " + price);
+                priceSum = priceSum + price;
+            case "Freitag":
+                price = 32.55;
+                System.out.println("Compilaz" + ", Preis: " + price);
+                priceSum = priceSum + price;
             case "Samstag":
                 price = 45.0;
                 System.out.println("Real Class" + ", Preis: " + price);
