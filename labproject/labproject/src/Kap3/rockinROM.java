@@ -2,45 +2,53 @@ package Kap3;
 
 import java.io.*;
 
-
 public class rockinROM {
     public static void main(String[] args) throws IOException {
         System.out.println("## ROCK in ROM: Dieses Tool gibt das Programm und den Preis des gewünschten Tages an ##");
         System.out.println("Bitte geben Sie den gewünschten Tag an: ");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String day = reader.readLine();
-        System.out.println("Programm und Preis vom " + day + getProgramm(day));
-    
+        System.out.println(getProgramm(day));
+
+
     }
 
-    public static String getProgramm(String day){
-        String programm = null;
-        switch(day){
+    public static String getProgramm(String day) {
+        String headliner = "";
+        double price = 0;
+        switch (day) {
             case "Montag":
-                programm = " Headliner: Rage against the Compiler, Preis: 37.50 EUR";
+                headliner = "Rage against the Compiler";
+                price = 37.50;
                 break;
             case "Dienstag":
-                programm = " Headliner: if/else, Preis: 22.00 EUR";
+                headliner = "if/else";
+                price = 22.0;
                 break;
             case "Mittwoch":
-                programm = " Headliner: The Falling Cases, Preis: 17.50 EUR";
+                headliner = "The Falling Cases";
+                price = 17.50;
                 break;
             case "Donnerstag":
-                programm = " Headliner: Blinkenlichten, Preis: 21.00 EUR";
-               break;
+                headliner = "Blinkenlichten";
+                price = 21.0;
+                break;
             case "Freitag":
-                programm = " Headliner: Compilaz, Preis: 32.55 EUR";
-                 break;
+                headliner = "Compilaz";
+                price = 32.55;
+                break;
             case "Samstag":
-                programm = " Headliner: Real Class, Preis: 45 EUR";
+                headliner = "Real Class";
+                price = 45.0;
                 break;
             case "Sonntag":
-                programm = " Headliner: Delphi and the Oracles, Preis: 35 EUR";
-                 break;
-        default:
-            System.out.println(" FEHLER - Wochentag " + day + " unbekannt");
-            System.exit(1);
+                headliner = "Delphi and the Oracles";
+                price = 35.0;
+                break;
+            default:
+                System.out.println(" FEHLER - Wochentag " + day + " unbekannt");
+                System.exit(1);
+        }
+        return day + " Headliner: " + headliner + " Preis: " + price;
     }
-    return programm;
-}
 }
