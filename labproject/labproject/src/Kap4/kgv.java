@@ -16,11 +16,10 @@ public class kgv {
     private static int kgv(int zahl1, int zahl2) {
         if (zahl1 <= 0 || zahl2 <= 0)
             throw new IllegalArgumentException("Beide Zahlen müssen >0 sein.");
-        int hoch = 1;
-        int kandidatKleiner = zahl1 < zahl2 ? zahl1 : zahl2;
-        while (Math.pow(zahl1,hoch) || zahl2 % kandidatKleiner != 0) {
-            hoch++;
+        int zahlGgt = zahl1 < zahl2 ? zahl1 : zahl2;
+        while (zahl1 % zahlGgt != 0 || zahl2 % zahlGgt != 0) {
+            zahlGgt--;
         }
-        return kandidat;
+        return (zahl1*zahl2)/zahlGgt;
     }
 }
