@@ -30,10 +30,7 @@ public class zahlenpruefen {
 
     public static void pruefeEingabe(String eingabe) {
         for (int i = 0; i < eingabe.length(); i++) {
-            if (eingabe){
-
-            }
-            System.out.println(eingabe.charAt(i));
+            System.out.println(Character.isDigit(eingabe.charAt(i)) ? eingabe.charAt(i) + " is Digit" : eingabe.charAt(i) + " is not Digit");
         }
     }
 }
