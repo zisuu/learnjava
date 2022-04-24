@@ -12,7 +12,7 @@ public class Musikplayer {
         Song meinSong = new Song();
         meinSong.interpret = "Tester";
         meinSong.titel = "Testsong";
-        meinSong.laengeInSekunden = 64;
+        meinSong.laengeInSekunden = 235;
         meinSong.print();
 
     }    
