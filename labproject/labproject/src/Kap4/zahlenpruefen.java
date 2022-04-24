@@ -9,8 +9,6 @@ import java.io.*;
  * @version 1.0
  */
 public class zahlenpruefen {
-
-
     public static void main(String[] args) throws IOException {
         System.out.println("Bitte geben Sie den gewünschten Text ein, um zu überprüfen ob dieser Text aus gültigen Zahlen besteht: ");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
