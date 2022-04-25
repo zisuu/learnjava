@@ -9,7 +9,7 @@ import java.io.*;
  * kleiner oder grösser ist.
  * @author dave
  */
-public class zahlraten {
+public class Zahlraten {
     public static void main(String[] args) throws IOException {
         //Eine Zufallszahl im Bereich 1-100 wird ermittelt.
         Random wuerfel = new Random();

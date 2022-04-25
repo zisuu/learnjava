@@ -1,6 +1,6 @@
 package Kap4;
 
-public class tabelle {
+public class Tabelle {
     public static void main(String[] args) {
         
         int[][] tabelle = new int[8][8];

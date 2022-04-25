@@ -2,7 +2,7 @@ package Kap4;
 
 import java.util.Random;
 
-public class forSchlaufen {
+public class ForSchlaufen {
     public static void wuerfelSechs() {
         for (Random wuerfel = new Random(); wuerfel.nextInt(6) + 1 != 6;) {
             System.out.println(".. ich muss nochmal würfeln!");
