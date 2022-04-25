@@ -33,6 +33,7 @@ public class Song {
 
     /**
      * Getter für das Feld Interpret
+     * 
      * @return den Interpret
      */
     public String getInterpret() {
@@ -41,6 +42,7 @@ public class Song {
 
     /**
      * Getter für das Feld Titel
+     * 
      * @return den Titel
      */
     public String getTitel() {
@@ -49,6 +51,7 @@ public class Song {
 
     /**
      * Getter für das Feld Laenge
+     * 
      * @return die Laenge
      */
     public Integer getLaenge() {
@@ -57,6 +60,7 @@ public class Song {
 
     /**
      * Getter für Stunden
+     * 
      * @return die Länge dieses Songs in Stunden
      */
     public Integer getStunden() {
@@ -65,6 +69,7 @@ public class Song {
 
     /**
      * Getter für Minuten
+     * 
      * @return die Länge dieses Songs in Minuten
      */
     public Integer getMinuten() {
@@ -73,6 +78,7 @@ public class Song {
 
     /**
      * Getter für die Länge in Sekunden
+     * 
      * @return die Länge dieses Songs in Sekunden
      */
     public Integer getSekunden() {
@@ -81,6 +87,7 @@ public class Song {
 
     /**
      * Setter für das Feld Interpret
+     * 
      * @param interpret den neuen Interpreten
      */
     public void setInterpret(String interpret) {
@@ -92,6 +99,7 @@ public class Song {
 
     /**
      * Setter für das Feld Titel
+     * 
      * @param titel den neuen Titel
      */
     public void setTitel(String titel) {
@@ -103,6 +111,7 @@ public class Song {
 
     /**
      * Setter für das Feld Länge in Sekunden
+     * 
      * @param laengeInSekunden die länge des neuen Titel
      */
     public void setLaengeInSekunden(Integer laengeInSekunden) {
@@ -114,18 +123,19 @@ public class Song {
 
     /**
      * Setter für die Länge in Stunden, Minuten und Sekunden
-     * @param stunden Stundenanteil der Länge
-     * @param minuten Minutenanteil der Länge
+     * 
+     * @param stunden  Stundenanteil der Länge
+     * @param minuten  Minutenanteil der Länge
      * @param sekunden Sekundenanteil der Länge
      */
     public void setLaenge(Integer stunden, Integer minuten, Integer sekunden) {
         /*
-        aus den übergebenen Werten wird die Gesamtlänge in Sekunden berechnet und 
-        diese gesetzt. Von außen ist das aber nicht sichtbar, einem Benutzer dieser 
-        Klasse ist egal, in welcher Form die Länge intern gespeichert wird. Das ist 
-        "implementation hiding".
-        */
-        int laengeInSekunden = sekunden + (minuten *60) + (stunden *3600);
+         * aus den übergebenen Werten wird die Gesamtlänge in Sekunden berechnet und
+         * diese gesetzt. Von außen ist das aber nicht sichtbar, einem Benutzer dieser
+         * Klasse ist egal, in welcher Form die Länge intern gespeichert wird. Das ist
+         * "implementation hiding".
+         */
+        int laengeInSekunden = sekunden + (minuten * 60) + (stunden * 3600);
         this.setLaengeInSekunden(laengeInSekunden);
     }
 
@@ -161,7 +171,5 @@ public class Song {
     private static String leadingZeros(Integer number) {
         return number < 10 ? "0" + number : Integer.toString(number);
     }
-
-
 
 }
