@@ -1,6 +1,6 @@
 package Kap4;
 
-public class ggt {
+public class Ggt {
     public static void main(String[] args) {
         System.out.println(ggt(5, 50));
     }

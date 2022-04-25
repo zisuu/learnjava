@@ -1,4 +1,4 @@
-public class calculating {
+public class Calculating {
     public static void main(String[] args) {
         int zahl1 = Integer.parseInt(args[0]);
         int zahl2 = Integer.parseInt(args[1]);

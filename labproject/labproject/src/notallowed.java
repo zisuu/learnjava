@@ -1,4 +1,4 @@
-public class notallowed {
+public class Notallowed {
     // public Integer verdopple1(Integer in){
     //     if (in == null) 
     //         throw new IllegalArgumentException("Null is not allowed");

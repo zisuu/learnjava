@@ -2,7 +2,7 @@ package Kap3;
 
 import java.io.*;
 
-public class rockinROM {
+public class RockinROM {
     public static void main(String[] args) throws IOException {
         System.out.println("## ROCK in ROM: Dieses Tool gibt das Programm und den Preis des gewünschten Tages an ##");
         System.out.println("Bitte geben Sie den gewünschten Tag an: ");

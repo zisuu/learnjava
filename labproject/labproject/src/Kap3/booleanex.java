@@ -3,7 +3,7 @@ package Kap3;
 // Für alle folgenden Codefragmente gilt, dass i, j und k int-Variablen mit den Werten i = 0, j = 7 und k = 13 sind.
 // Welchen Wert haben die drei Variablen, nachdem die Fragmente ausgeführt wurden?
 
-public class booleanex {
+public class Booleanex {
     public static void main(String[] args) {
     int i = 0, j = 7, k = 13;
 

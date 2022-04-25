@@ -1,4 +1,4 @@
-public class array {
+public class Array {
     public void numbers(String name) {
         int[] zahlen = new int[] { 1, 2, 3, 4, 5 };
         int ersteZahl = zahlen[0]; // den ersten Wert des Arrays lesen

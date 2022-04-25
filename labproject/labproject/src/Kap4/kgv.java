@@ -2,7 +2,7 @@ package Kap4;
 
 import java.io.*;
 
-public class kgv {
+public class Kgv {
     public static void main(String[] args) throws IOException {
         System.out.println("## kgv rechner ##");
         System.out.println("Bitte geben Sie die erste Zahl an: ");

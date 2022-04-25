@@ -1,4 +1,4 @@
-public class fail {
+public class Fail {
     /**
      * Hilfsmethode zu main: im Fehlerfall schreibt diese Methode eine Fehlermeldung 
      * und beendet das Programm

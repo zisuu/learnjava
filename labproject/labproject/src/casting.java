@@ -1,4 +1,4 @@
-public class casting {
+public class Casting {
     // Auto meinAuto = new Sportwagen();
     // meinAuto.fahre(); //Dieser Aufruf funktioniert
     // meinAuto.fahreSchnell(); //Kompiliert nicht

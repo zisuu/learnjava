@@ -1,4 +1,4 @@
-public class ifloop {
+public class Ifloop {
     public void begruesse(String name){
         if (name != null){
             System.out.println("Hallo, " + name);

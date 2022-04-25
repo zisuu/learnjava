@@ -1,4 +1,4 @@
-public class javadoc {
+public class Javadoc {
  //Javadoc einer Methode
 /**
  * Kehrt einen <code>String</code> zeichenweise um. Zum Beispiel

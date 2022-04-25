@@ -1,6 +1,6 @@
 package Kap3;
 
-public class kartennamen {
+public class Kartennamen {
     public static void main(String[] args) {
         System.out.println(kartenName("Rot", 11));
 
