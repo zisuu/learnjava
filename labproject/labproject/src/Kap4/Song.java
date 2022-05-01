@@ -1,5 +1,12 @@
 package Kap4;
 
+// Implementieren Sie in Song drei Konstruktoren
+// OK: einen, der alle drei Feldwerte als Parameter erhält und setzt
+// OK: einen, der Titel und Länge als Parameter erhält und für den Interpreten den Default-Wert »Unbekannter Künstler« setzt
+// einen, der Titel und Stunden, Minuten und Sekunden der Länge als Parameter erhält
+// Implementieren Sie keinen Default-Konstruktor. Passen Sie die Klasse Musicplayer so an, dass sie einen der 
+// Konstruktoren ruft, um neue Songs zu erzeugen. Die Lösung zu dieser Übung finden Sie im Anhang.
+
 /**
  * Klasse Song, mit zwei String-Feldern interpret und titel und einem int-Feld
  * laengeInSekunden.
@@ -12,6 +19,45 @@ public class Song {
     private String interpret;
     private String titel;
     private Integer laengeInSekunden;
+
+    /**
+     * Konstruktor für Songs mit titel, interpret und laengeInSekunden
+     * 
+     * @param titel des Songs
+     * @param interpret des Songs
+     * @param laengeInSekunden des Songs
+     */
+    public Song(String titel, String interpret, int laengeInSekunden) {
+        this.setTitel(titel);
+        this.setInterpret(interpret);
+        this.setLaengeInSekunden(laengeInSekunden);
+    }
+
+    /**
+     * Konstruktor für Songs mit titel und laengeInSekunden, aber ohne Angabe des Interprets
+     * 
+     * @param titel des Songs
+     * @param laengeInSekunden des Songs
+     */
+    public Song(String titel, int laengeInSekunden) {
+        this(titel, "Unbekannter Künstler", laengeInSekunden);
+    }
+
+    /**
+     * Konstruktor für Songs mit titel und laengeInSekunden, aber ohne Angabe des Interprets
+     * 
+     * @param titel des Songs
+     * @param interpret des Songs
+     * @param stunden des Songs
+     * @param minuten des Songs
+     * @param sekunden des Songs
+     */
+    public Song(String titel, String interpret,  Integer stunden, Integer minuten, Integer sekunden) {
+        int laengeInSekunden = sekunden + (minuten * 60) + (stunden * 3600);
+        this.setTitel(titel);
+        this.setInterpret(interpret);
+        this.setLaengeInSekunden(laengeInSekunden);
+    }
 
     /**
      * Methode die die Daten des Songs auf die Kommandozeile ausgibt
