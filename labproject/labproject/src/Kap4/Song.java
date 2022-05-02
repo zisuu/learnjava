@@ -1,24 +1,26 @@
 package Kap4;
 
-// Implementieren Sie in Song drei Konstruktoren
-// OK: einen, der alle drei Feldwerte als Parameter erhält und setzt
-// OK: einen, der Titel und Länge als Parameter erhält und für den Interpreten den Default-Wert »Unbekannter Künstler« setzt
-// einen, der Titel und Stunden, Minuten und Sekunden der Länge als Parameter erhält
-// Implementieren Sie keinen Default-Konstruktor. Passen Sie die Klasse Musicplayer so an, dass sie einen der 
-// Konstruktoren ruft, um neue Songs zu erzeugen. Die Lösung zu dieser Übung finden Sie im Anhang.
+// Erweitern Sie die Klasse Song um das oben gezeigte Feld gesamtLaenge und die zugehörige Zugriffsmethode 
+// getGesamtLaenge. Das Feld soll immer die Länge aller erzeugten Songs enthalten. Achten Sie vor allem darauf,
+//  diesen Wert anzupassen, sobald die Länge eines Songs nachträglich geändert wird.
 
 /**
  * Klasse Song, mit zwei String-Feldern interpret und titel und einem int-Feld
  * laengeInSekunden.
  * 
  * @author zisuu
- * @version 1.3
+ * @version 1.4
  */
 public class Song {
 
     private String interpret;
     private String titel;
     private Integer laengeInSekunden;
+    private static long gesamtLaenge;
+    public static long getGesamtLaenge(){
+        return Song.gesamtLaenge;
+    }
+
 
     /**
      * Konstruktor für Songs mit titel, interpret und laengeInSekunden
