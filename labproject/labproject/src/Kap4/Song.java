@@ -1,9 +1,5 @@
 package Kap4;
 
-// Erweitern Sie die Klasse Song um das oben gezeigte Feld gesamtLaenge und die zugehörige Zugriffsmethode 
-// getGesamtLaenge. Das Feld soll immer die Länge aller erzeugten Songs enthalten. Achten Sie vor allem darauf,
-//  diesen Wert anzupassen, sobald die Länge eines Songs nachträglich geändert wird.
-
 /**
  * Klasse Song, mit zwei String-Feldern interpret und titel und einem int-Feld
  * laengeInSekunden.
@@ -13,14 +9,19 @@ package Kap4;
  */
 public class Song {
 
-    private String interpret;
-    private String titel;
-    private Integer laengeInSekunden;
     private static long gesamtLaenge;
+
+    /**
+     * Liest die Gesamtlänge aller Songs, die in diesem Javaprozess erzeugt wurden.
+     * @return 
+     */
     public static long getGesamtLaenge(){
         return Song.gesamtLaenge;
     }
 
+    private String interpret;
+    private String titel;
+    private int laengeInSekunden;
 
     /**
      * Konstruktor für Songs mit titel, interpret und laengeInSekunden
@@ -54,11 +55,8 @@ public class Song {
      * @param minuten des Songs
      * @param sekunden des Songs
      */
-    public Song(String titel, String interpret,  Integer stunden, Integer minuten, Integer sekunden) {
-        int laengeInSekunden = sekunden + (minuten * 60) + (stunden * 3600);
-        this.setTitel(titel);
-        this.setInterpret(interpret);
-        this.setLaengeInSekunden(laengeInSekunden);
+    public Song(String titel, String interpret,  int stunden, int minuten, int sekunden) {
+        this(titel, interpret, sekunden + (minuten * 60) + (stunden * 3600));
     }
 
     /**
@@ -93,7 +91,7 @@ public class Song {
      * 
      * @return den Titel
      */
-    public String getTitel() {
+    String getTitel() {
         return titel;
     }
 
@@ -102,7 +100,7 @@ public class Song {
      * 
      * @return die Laenge
      */
-    public Integer getLaenge() {
+    public Integer getLaengeInSekunden() {
         return laengeInSekunden;
     }
 
@@ -139,9 +137,6 @@ public class Song {
      * @param interpret den neuen Interpreten
      */
     public void setInterpret(String interpret) {
-        if (interpret == null) {
-            throw new IllegalArgumentException("Interpret ist null");
-        }
         this.interpret = interpret;
     }
 
@@ -151,9 +146,6 @@ public class Song {
      * @param titel den neuen Titel
      */
     public void setTitel(String titel) {
-        if (titel == null) {
-            throw new IllegalArgumentException("Titel ist null");
-        }
         this.titel = titel;
     }
 
@@ -163,9 +155,10 @@ public class Song {
      * @param laengeInSekunden die länge des neuen Titel
      */
     public void setLaengeInSekunden(Integer laengeInSekunden) {
-        if (laengeInSekunden < 0) {
-            throw new IllegalArgumentException("Sekunden können nicht negativ sein.");
-        }
+        //Zunächst die alte Länge von der Gesamtlänge abziehen
+        Song.gesamtLaenge -= this.laengeInSekunden;
+        //Dann die neue Länge wieder hinzuaddieren
+        Song.gesamtLaenge += laengeInSekunden;
         this.laengeInSekunden = laengeInSekunden;
     }
 
@@ -183,8 +176,8 @@ public class Song {
          * Klasse ist egal, in welcher Form die Länge intern gespeichert wird. Das ist
          * "implementation hiding".
          */
-        int laengeInSekunden = sekunden + (minuten * 60) + (stunden * 3600);
-        this.setLaengeInSekunden(laengeInSekunden);
+        int laengeSekunden = sekunden + 60 * minuten + 3600 * stunden;
+        this.setLaengeInSekunden(laengeSekunden);
     }
 
     /**

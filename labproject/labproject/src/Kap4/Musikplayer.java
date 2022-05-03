@@ -11,11 +11,13 @@ package Kap4;
 public class Musikplayer {
     public static void main(String[] args) {
 
-        Song meinSong1 = new Song("Testsong1", "Tester", 632);
+        Song meinSong1 = new Song("Testsong1", "Tester", 30);
         meinSong1.print();
-        Song meinSong2 = new Song("Testsong2", 356);
+        Song meinSong2 = new Song("Testsong2", 20);
         meinSong2.print();
-        Song meinSong3 = new Song("Testsong3", "Tester", 3, 2, 32);
-        meinSong3.print();
+        System.out.println("Gesamtlänge: " + Song.getGesamtLaenge());
+        meinSong1.setLaengeInSekunden(20);
+        meinSong2.setLaengeInSekunden(30);
+        System.out.println("Gesamtlänge: " + Song.getGesamtLaenge());
     }
 }
