@@ -39,7 +39,7 @@ public class Tier {
      * @return die String-Darstellung dieses Objekts.
      */
     public String toString() {
-        return "Name: " + this.name + ", Gewicht (Gramm): " + this.gewichtGr + ", Geschlecht: " + this.getGeschlecht();
+        return "Name: " + this.name + ", Gewicht: " + this.gewichtGr +"g" + ", Geschlecht: " + this.getGeschlecht();
     }
 
     /**
