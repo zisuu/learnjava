@@ -39,7 +39,7 @@ public class Tier {
      * @return die String-Darstellung dieses Objekts.
      */
     public String toString() {
-        return "Name: " + this.name + ", Gewicht: " + this.gewichtGr +"g" + ", Geschlecht: " + this.getGeschlecht();
+        return "Name: " + this.name + ", Gewicht: " + this.gewichtGr + "g" + ", Geschlecht: " + this.getGeschlecht();
     }
 
     /**
@@ -110,17 +110,17 @@ public class Tier {
     }
 
     // /**
-    //  * Konstruktor für Tiere
-    //  * 
-    //  * @param name des tieres
-    //  * @param interpret des Songs
-    //  * @param stunden des Songs
-    //  * @param minuten des Songs
-    //  * @param sekunden des Songs
-    //  */
-    // public Tier(String name, int getGewichtGr,  char[] geschlecht) {
-    //     this.setName(name);
-    //     this.setGewichtGr(gewichtGr);
-    //     this.setGeschlecht(geschlecht);
+    // * Konstruktor für Tiere
+    // *
+    // * @param name des tieres
+    // * @param interpret des Songs
+    // * @param stunden des Songs
+    // * @param minuten des Songs
+    // * @param sekunden des Songs
+    // */
+    // public Tier(String name, int getGewichtGr, char[] geschlecht) {
+    // this.setName(name);
+    // this.setGewichtGr(gewichtGr);
+    // this.setGeschlecht(geschlecht);
     // }
 }
