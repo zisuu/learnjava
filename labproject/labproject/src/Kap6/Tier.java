@@ -29,9 +29,9 @@ public class Tier {
      */
     public static final char WEIBLICH = 'w';
 
-    private String name;
+    private final String name;
     private int gewichtGr; // in Gramm
-    private char geschlecht;
+    private final char geschlecht;
 
     /**
      * toString-Methode soll die Werte der Felder zurückgeben.
@@ -52,23 +52,11 @@ public class Tier {
     }
 
     /**
-     * Setter für das Feld name
-     * 
-     * @param name des Tiers
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
      * Getter für das Feld gewichtGr
      * 
      * @return gewicht des Tiers in Gramm
      */
     public int getGewichtGr() {
-        if (gewichtGr <= 0) {
-            throw new IllegalArgumentException("Gewicht muss grösser 0 sein");
-        }
         return this.gewichtGr;
     }
 
@@ -78,6 +66,9 @@ public class Tier {
      * @param gewichtGr des Tiers in Gramm
      */
     public void setGewichtGr(int gewichtGr) {
+        if (gewichtGr <= 0) {
+            throw new IllegalArgumentException("Gewicht muss grösser 0 sein");
+        }
         this.gewichtGr = gewichtGr;
     }
 
@@ -91,36 +82,28 @@ public class Tier {
     }
 
     /**
-     * Setter für das Feld geschlecht
-     * 
-     * @param geschlecht des Tiers, 'm' oder 'w'
-     */
-    public void setGeschlecht(char geschlecht) {
-        if (geschlecht != MAENNLICH && geschlecht != WEIBLICH) {
-            throw new IllegalArgumentException("Geschlecht muss m oder w sein.");
-        }
-        this.geschlecht = geschlecht;
-    }
-
-    /**
      * Methode die die Daten des Songs auf die Kommandozeile ausgibt
      */
     public void print() {
         System.out.println(this);
     }
 
-    // /**
-    // * Konstruktor für Tiere
-    // *
-    // * @param name des tieres
-    // * @param interpret des Songs
-    // * @param stunden des Songs
-    // * @param minuten des Songs
-    // * @param sekunden des Songs
-    // */
-    // public Tier(String name, int getGewichtGr, char[] geschlecht) {
-    // this.setName(name);
-    // this.setGewichtGr(gewichtGr);
-    // this.setGeschlecht(geschlecht);
-    // }
+    /**
+    * Konstruktor für Tiere
+    *
+    * @param name des tieres
+    * @param gewichtGr des tieres, in Gramm
+    * @param geschlecht des tieres
+    */
+    public Tier(String name, int gewichtGr, char geschlecht) {
+        if (geschlecht != MAENNLICH && geschlecht != WEIBLICH) {
+            throw new IllegalArgumentException("Geschlecht muss m oder w sein.");
+        }
+        if (gewichtGr <= 0) {
+            throw new IllegalArgumentException("Gewicht muss grösser 0 sein");
+        }
+        this.name = name;
+        this.gewichtGr = gewichtGr;
+        this.geschlecht = geschlecht;
+    }
 }

@@ -1,6 +1,5 @@
 package Kap6;
 
-
 /**
  * Klasse Programm
  * 
@@ -17,29 +16,26 @@ public class Programm {
         testeDobermann();
         testeDackel();
         testeKatze();
+        tierKonstruktor ();
     }
 
     private static void testeDackel() {
-        Dackel dackel1 = new Dackel();
-        dackel1.setName("Billy");
-        dackel1.setGewichtGr(750);
-        dackel1.setGeschlecht(Tier.MAENNLICH);
+        Dackel dackel1 = new Dackel("Billy", 750, Tier.MAENNLICH);
         dackel1.print();
     }
 
     private static void testeDobermann() {
-        Dobermann dobermann1 = new Dobermann();
-        dobermann1.setName("Frieda");
-        dobermann1.setGewichtGr(15000);
-        dobermann1.setGeschlecht(Tier.WEIBLICH);
+        Dobermann dobermann1 = new Dobermann("Frieda", 15000, Tier.WEIBLICH);
         dobermann1.print();
     }
 
     private static void testeKatze() {
-        Katze katze1 = new Katze();
-        katze1.setName("Filou");
-        katze1.setGewichtGr(500);
-        katze1.setGeschlecht(Tier.MAENNLICH);
+        Katze katze1 = new Katze("Filou", 500, Tier.MAENNLICH);
         katze1.print();
+    }
+
+    private static void tierKonstruktor () {
+        Tier tier1 = new Tier("Das Tier1", 10000, Tier.MAENNLICH);
+        tier1.print();
     }
 }
