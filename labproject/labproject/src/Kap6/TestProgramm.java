@@ -11,11 +11,8 @@ public class TestProgramm {
         testeFahrrad();
     }
     private static void testeFahrrad() {
-        Fahrrad fahrrad1 = new Fahrrad();
-        fahrrad1.setMaxGeschwindigkeit(30);
-        fahrrad1.setSitzplaetze(1);
-        fahrrad1.setMarkeUndModell("Price - AM 8.0");
+        Fahrrad fahrrad1 = new Fahrrad("Price - AM v8", 10.0, 1);
         fahrrad1.print();
-        fahrrad1.fahreNach("Münsingen BHF", 30);
+        fahrrad1.fahreNach("Münsingen BHF", 354);
     }
 }

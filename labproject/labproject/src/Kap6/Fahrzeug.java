@@ -13,17 +13,17 @@ package Kap6;
  * zwischen 0 und 320 erlaubt, auch wenn hoffentlich niemand so schnell fährt.
  * OK: - Sitzplätze, Eigenschaft, int: wie viele Personen finden in diesem
  * Fahrzeug Platz?
- * - fahreNach, Methode(String, double), void: Die Parameter sind der Name des
+ * OK: - fahreNach, Methode(String, double), void: Die Parameter sind der Name des
  * Ziels und die Entfernung in Kilometern.
  * Die Methode soll eine Ausgabe auf der Kommandozeile machen, die den Namen des
- * Zielortes und die Fahrzeit in
- * Minuten, Stunden und, falls nötig, Tagen enthält.
+ * Zielortes und die Fahrzeit in Minuten, Stunden und, falls nötig, Tagen
+ * enthält.
  * 
  * OK: Es gibt verschiedene Arten von Fahrzeugen: Motorräder, Fahrräder, PKWs
- * und LKWs. Fahrräder haben eine maximale
- * Höchstgeschwindigkeit von 135 km/h, das entspricht dem Geschwindigkeitsrekord
+ * und LKWs. 
+ * OK: Fahrräder haben eine maximale Höchstgeschwindigkeit von 135 km/h, das entspricht dem Geschwindigkeitsrekord
  * auf ebener Strecke.
- * Einige dieser Fahrzeuge sind motorisiert. Das bringt keine zusätzlichen
+ * OK: Einige dieser Fahrzeuge sind motorisiert. Das bringt keine zusätzlichen
  * Eigenschaften oder Fähigkeiten mit sich,
  * soll aber markiert werden. Außerdem sind LKWs und Lieferwagen eine spezielle
  * Art von PKW, nämlich Transporter.
@@ -55,9 +55,7 @@ public class Fahrzeug {
     }
 
     public void setMaxGeschwindigkeit(double maxGeschwindigkeit) {
-        if (maxGeschwindigkeit < 0 || maxGeschwindigkeit > 320) {
-            throw new IllegalArgumentException("Max. Geschwindigkeit muss zwischen 0 und 320 sein");
-        }
+
         this.maxGeschwindigkeit = maxGeschwindigkeit;
     }
 
@@ -96,32 +94,40 @@ public class Fahrzeug {
      * Minuten, Stunden und, falls nötig, Tagen enthält.
      * 
      * @param zielName
-     * @param zielEntfernung
-     * @return fahrzeit Minuten, Stunden und, falls nötig, Tagen
+     * @param zielEntfernung in km
+     * @return fahrzeit Minuten, Stunden und falls nötig, Tagen
      */
     public void fahreNach(String zielName, double zielEntfernung) {
-        Double fahrzeitInStunden = this.getMaxGeschwindigkeit() / zielEntfernung;
-        System.out.println("Fahrzeit nach " + zielName + " : " + fahrzeitInStunden +"h");
+        Double fahrzeit = zielEntfernung / this.getMaxGeschwindigkeit() ;
+        int fahrzeitInStunden = fahrzeit.intValue() % 24;
+        Double fahrzeitInMinuten = (fahrzeit * 60) % 60;
+        int fahrzeitInTage = fahrzeit.intValue() / 24;
+
+        System.out.println("Fahrzeit nach " + zielName + " : " + fahrzeitInTage + " days, " + fahrzeitInStunden
+                + " hours, " + fahrzeitInMinuten + " minutes");
     }
 
-    // /**
-    //  * formatTime-Methode soll aus dem Feld laengeInSekunden eine Zeitangabe im
-    //  * Format
-    //  * Minuten:Sekunden berechnen und diese zurückgeben.
-    //  * 
-    //  * @param laengeInSekunden - Dauer des Songs in Sekunden als
-    //  *                         <code>Integer</code>
-    //  * @return laengeInMinutenSekunden - Dauer des Songs im Format minuten:sekunden
-    //  *         als <code>Integer</code>
-    //  */
-    // public String formatTime() {
-    //     Integer hours = this.getStunden();
-    //     Integer minutes = this.getMinuten();
-    //     String duration = "";
-    //     if (hours > 0) {
-    //         duration += leadingZeros(hours) + ":";
-    //     }
-    //     duration += leadingZeros(minutes) + ":" + leadingZeros(seconds);
-    //     return duration;
-    // }
+    /**
+     * Konstruktor für Fahrzeug
+     *
+     * @param markeUndModell     des Fahrzeugs
+     * @param maxGeschwindigkeit des Fahrzeugs, in km/h
+     * @param sitzplaetze        des Fahrzeugs
+     */
+    public Fahrzeug(String markeUndModell, Double maxGeschwindigkeit, int sitzplaetze) {
+        if (maxGeschwindigkeit < 0 || maxGeschwindigkeit > 320) {
+            throw new IllegalArgumentException("Max. Geschwindigkeit muss zwischen 0 und 320 sein");
+        }
+        this.markeUndModell = markeUndModell;
+        this.maxGeschwindigkeit = maxGeschwindigkeit;
+        this.sitzplaetze = sitzplaetze;
+    }
+
+    public interface Motorisiert {
+
+    }
+
+    public interface Transporter {
+        
+    }
 }
