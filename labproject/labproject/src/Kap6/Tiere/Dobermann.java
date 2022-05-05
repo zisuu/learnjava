@@ -1,4 +1,4 @@
-package Kap6;
+package Kap6.Tiere;
 
 public class Dobermann extends Hund {
 

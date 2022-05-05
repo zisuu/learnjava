@@ -1,4 +1,4 @@
-package Kap6;
+package Kap6.Tiere;
 
 /**
  * Klasse Tier
@@ -82,7 +82,7 @@ public class Tier {
     }
 
     /**
-     * Methode die die Daten des Songs auf die Kommandozeile ausgibt
+     * Methode die die Daten des Tiers auf die Kommandozeile ausgibt
      */
     public void print() {
         System.out.println(this);

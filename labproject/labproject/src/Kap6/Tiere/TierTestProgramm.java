@@ -1,7 +1,7 @@
-package Kap6;
+package Kap6.Tiere;
 
 /**
- * Klasse Programm
+ * Klasse TierTestProgramm
  * 
 * Schreiben Sie anschließend ein Programm, das einen Dackel, einen Dobermann
 * und eine Katze instanziiert, diese drei
@@ -11,7 +11,7 @@ package Kap6;
  * @author zisuu
  * @version 1.0
  */
-public class Programm {
+public class TierTestProgramm {
     public static void main(String[] args) {
         testeDobermann();
         testeDackel();
