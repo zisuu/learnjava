@@ -1,10 +1,10 @@
 package Kap6;
 
-public class Lkw extends Fahrzeug implements Motorisiert, Transporter {
+public class Lieferwagen extends Fahrzeug implements Motorisiert, Transporter {
 
     private String ladung;
 
-    public Lkw(String markeUndModell, Double maxGeschwindigkeit, int sitzplaetze) {
+    public Lieferwagen(String markeUndModell, Double maxGeschwindigkeit, int sitzplaetze) {
         super(markeUndModell, maxGeschwindigkeit, sitzplaetze);
     }
 
