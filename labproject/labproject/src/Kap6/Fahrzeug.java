@@ -1,5 +1,7 @@
 package Kap6;
 
+import java.util.Comparator;
+
 /**
  * Klasse Fahrzeug
  * 
@@ -175,4 +177,17 @@ public class Fahrzeug {
         return duration;
     }
 
+    public static class GeschwindigkeitsComparator implements Comparator{
+        public int compare(Object o1, Object o2){
+            double g1 = ((Fahrzeug) o1).maxGeschwindigkeit;
+            double g2 = ((Fahrzeug) o2).maxGeschwindigkeit;
+            if (g1 < g2){
+                return -1;
+            } else if (g1 > g2){
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+    }
 }

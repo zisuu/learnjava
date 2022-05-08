@@ -10,6 +10,7 @@ public class TestProgramm {
     public static void main(String[] args) {
         testeFahrrad();
         testeLkw();
+        
     }
 
     private static void testeFahrrad() {
@@ -20,10 +21,5 @@ public class TestProgramm {
     private static void testeLkw() {
         Lkw lkw1 = new Lkw("Mercedes XY", 120.0, 2);
         lkw1.fahreNach("Münsingen BHF", 354);
-        lkw1.lade("Bananennen");
-        lkw1.pruefeLadung();
-        lkw1.entlade();
-        lkw1.pruefeLadung();
     }
-
 }
