@@ -1,25 +1,62 @@
 package app.Kap4;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-public class Kgv {
+/**
+ * Programm zur Berechnung des kleinsten gemeinsamen Vielfachen (KGV) zweier
+ * Zahlen
+ *
+ * @author Kai
+ */
+public class KGV {
+
     public static void main(String[] args) throws IOException {
-        System.out.println("## kgv rechner ##");
-        System.out.println("Bitte geben Sie die erste Zahl an: ");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        Integer zahl1 = Integer.parseInt(reader.readLine());
-        System.out.println("Bitte geben Sie die zweite Zahl an: ");
-        Integer zahl2 = Integer.parseInt(reader.readLine());
-        System.out.println(kgv(zahl1, zahl2));
+        //Zwei Zahlen einlesen
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Geben Sie die erste Zahl ein: ");
+        int zahl1 = Integer.parseInt(in.readLine());
+        System.out.println("Geben Sie die zweite Zahl ein: ");
+        int zahl2 = Integer.parseInt(in.readLine());
+        //Das KGV berechnen
+        int kgv = kgv(zahl1, zahl2);
+        //Das Ergebnis ausgeben.
+        System.out.println("Das kleinste gemeinsame Vielfache ist: " + kgv);
+
     }
 
-    private static int kgv(int zahl1, int zahl2) {
-        if (zahl1 <= 0 || zahl2 <= 0)
+    /**
+     * Methode zur Berechnung des KGV
+     *
+     * @param zahl1 die erste Zahl
+     * @param zahl2 die zweite Zahl
+     * @return das KGV der beiden Zahlen
+     * @throws IllegalArgumentException wenn nicht beide Zahlen >0 sind.
+     * @throws ArithmeticException wenn bei der Berechnung ein Überlauf
+     * eintritt.
+     */
+    public static int kgv(int zahl1, int zahl2) {
+        //Parameter prüfen
+        if (zahl1 <= 0 || zahl2 <= 0) {
             throw new IllegalArgumentException("Beide Zahlen müssen >0 sein.");
-        int zahlGgt = zahl1 < zahl2 ? zahl1 : zahl2;
-        while (zahl1 % zahlGgt != 0 || zahl2 % zahlGgt != 0) {
-            zahlGgt--;
         }
-        return (zahl1*zahl2)/zahlGgt;
+        //Sicherstellen, dass zahl1 die größere ist.
+        if (zahl1 < zahl2) {
+            int temp = zahl1;
+            zahl1 = zahl2;
+            zahl2 = temp;
+        }
+        int multiplikator = 1;
+        //Vielfache der größeren Zahl in einer Schleife testen, ob sie auch Vielfache der kleineren Zahl sind.
+        while ((zahl1 * multiplikator) % zahl2 != 0) {
+            //Prüfen, ob bei der nächsten Multiplikation ein Überlauf eintreten würde. Falls ja: Fehler!
+            if (Integer.MAX_VALUE - zahl1 < zahl1 * multiplikator) {
+                throw new ArithmeticException("KGV ist größer als Wertebereich.");
+            }
+            multiplikator++;
+        }
+        return zahl1 * multiplikator;
     }
+
 }

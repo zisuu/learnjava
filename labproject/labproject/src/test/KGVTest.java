@@ -1,0 +1,81 @@
+package test;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+import app.Kap4.KGV;
+
+public class KGVTest {
+
+    @Test
+    public void gleicheTeilerGerade() {
+        assertEquals(4, KGV.kgv(4, 4));
+    }
+
+    @Test
+    public void gleicheTeilerUngerade() {
+        assertEquals(5, KGV.kgv(5, 5));
+    }
+
+    @Test
+    public void bigInt() {
+        assertEquals(18366040, KGV.kgv(2345, 7832));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void zahl1Null() {
+        KGV.kgv(0, 42);
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void zahl2Null() {
+        KGV.kgv(42, 0);
+    }
+
+    @Test
+    public void zahl1Ist1() {
+        //Zahl 1 ist 1
+        assertEquals(17, KGV.kgv(1, 17));
+    }
+
+    @Test
+    public void zahl2Ist1() {
+        //Zahl 2 ist 1
+        assertEquals(13, KGV.kgv(13, 1));
+    }
+    
+    @Test
+    public void zahl1IstVielfaches() {
+        //Zahl 1 ist ein Vielfaches von Zahl 2
+        assertEquals(24, KGV.kgv(24, 6));
+    }
+
+    @Test
+    public void zahl2IstVielfaches() {
+        //Zahl 2 ist ein Vielfaches von Zahl 1
+        assertEquals(24, KGV.kgv(4, 24));
+    }
+
+    @Test
+    public void gemeinsamerTeiler() {
+        //beide Zahlen haben einen gemeinsamen Teiler
+        assertEquals(36, KGV.kgv(9, 12));
+    }    
+    
+    @Test
+    public void teilferfremdeZahlen() {
+        //beide Zahlen haben keine gemeinsamen Teiler
+        assertEquals(221, KGV.kgv(17, 13));
+    }
+    
+    @Test
+    public void gleicheZahlen() {
+        //Zahlen sind gleich
+        assertEquals(17, KGV.kgv(17, 17));
+    }    
+    
+    @Test(expected = ArithmeticException.class)
+    public void testUeberlauf(){
+        //Überlauf-Szenario
+        KGV.kgv(Integer.MAX_VALUE, Integer.MAX_VALUE - 1);
+    }
+}
