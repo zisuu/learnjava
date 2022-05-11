@@ -24,5 +24,20 @@ public class GGTTest {
     @Test
     public void teilerExistiert() {
         assertEquals(14, GGT.ggt(42, 28));
-    }  
+    }
+
+    @Test
+    public void param1istNull() {
+        assertEquals(8, GGT.ggt(0, 8));
+    }
+
+    @Test
+    public void param2istNull() {
+        assertEquals(3, GGT.ggt(3, 0));
+    } 
+
+    @Test
+    public void beideZahlenGleich() {
+        assertEquals(5, GGT.ggt(5, 5));
+    }      
 }
