@@ -1,3 +1,4 @@
+package app.Kap2;
 
 public class Ternaer {
     public static void main(String[] args) {

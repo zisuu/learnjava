@@ -1,3 +1,4 @@
+package app.Kap2;
 public class Array {
     public void numbers(String name) {
         int[] zahlen = new int[] { 1, 2, 3, 4, 5 };

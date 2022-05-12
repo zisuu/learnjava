@@ -1,3 +1,4 @@
+package app.Kap2;
 public class Calculating {
     public static void main(String[] args) {
         int zahl1 = Integer.parseInt(args[0]);
