@@ -1,6 +1,8 @@
 package app.Kap7;
 
 import java.io.*;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 /**
  * Programm zur BMI Berechnung.
@@ -34,17 +36,27 @@ public class BMI {
         Integer bodyWeight = Integer.parseInt(reader.readLine());
         System.out.println("Eingabe Körpergrösse in [cm]: ");
         Integer bodyHeight = Integer.parseInt(reader.readLine());
-        System.out.println(getBMI(bodyWeight, bodyHeight));
+        //Dann wird gerechnet
+        double bmi = getBMI(bodyHeight,bodyWeight);
+        NumberFormat formatter = new DecimalFormat("##.##");
+        System.out.println("Ihr BMI ist " + formatter.format(bmi));
+        System.out.println("Damit haben Sie " + bmiZuKategorie(bmi));
     }
 
     public static double getBMI(int bodyHeight, int bodyWeight){
+        if (bodyHeight <=0 || bodyWeight <=0) {
+            throw new IllegalArgumentException("Köpergrösse und Gewicht müssen >0 sein.");
+        }
         double bodyHeightM = (double) bodyHeight / 100;
         double bmi = bodyWeight / (bodyHeightM * bodyHeightM);
         return bmi;
     }
 
     public static String bmiZuKategorie(double bmi){
-        if (bmi < 18.5){
+        //Parameter prüfen
+        if (bmi <= 0) {
+            throw new IllegalArgumentException("BMI muss >0 sein.");
+        } else if (bmi < 18.5){
             return "Untergewicht";
         } else if (bmi < 25){
             return "Normalgewicht";
