@@ -35,39 +35,23 @@ public class Namen {
     // Then: Name soll im neuen Format ausgegeben werden.
     public static String validateName(String name) {
         // wenn der Name Leer ist soll das als Fehler behandelt werden.
-        if (name.equals("")) {
+        if (name == null || name.equals("")) {
             throw new IllegalArgumentException("Name kann nicht leer sein");
         }
-        // wenn mehr oder weniger als ein Komma enthalten ist, soll das als Fehler
-        // behandelt werden, dazu gibt es die validateComma Methode
-        if (validateComma(name) != 1){
-            throw new IllegalArgumentException("Fehler: es muss ein Komma, gefolgt von einem leerschlag vorhanden sein! Bitte korrigiere Eingabe!");
-        }
-        // lokalisiere das Komma
-        int index = name.indexOf(",");
-        // erkenne Vorname
-        String nachname = name.substring(0, index);
-        // erkenne Nachname
-        String vorname = name.substring(index+2, name.length());
-        // setze neuen String zusammen
-        name = vorname + " " + nachname;
-        return name;
+        int index = name.length();
+        String ausgabe = "";
+        //Die Schleife läuft, solange in Eingabe weitere Kommas gefunden werden.
+        do {
+            //Von hinten angefangen wird das nächste Komma ghesucht. 
+            int naechsterIndex = name.lastIndexOf(",", index - 1);
+            //Der Text zwischen diesem Komma und dem vorherigen (oder dem Stringende) wird an die Ausgabe angehangen
+            ausgabe += name.substring(naechsterIndex + 1, index).trim();
+            //Der Ausgabe wird ein Leerzeichen hinzugefügt
+            ausgabe += " ";
+            //Das gerade gefundene Komma wird für den nächsten Durchlauf zum vorherigen Komma
+            index = naechsterIndex;
+        } while (index > -1);
+        return ausgabe.trim();
     }
 
-    /**
-     * Ermittelt wieviele Kommas im String name vorhanden sind und gibt die Anzahl zurück
-     *
-     * @param name der String, der geprüft werden soll
-     * @return die Anzahl Kommatas
-     * 
-     */
-    public static int validateComma(String name) {
-        int index = name.indexOf(", ");
-        int coutComma = 0;
-        while (index != -1) {
-            coutComma++;
-            index = name.indexOf(", ", index + 1);
-        }
-        return coutComma;
-    }
 }

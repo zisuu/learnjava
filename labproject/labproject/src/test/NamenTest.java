@@ -18,5 +18,10 @@ public class NamenTest {
         assertEquals("Hans Fischer", Namen.validateName("Fischer, Hans"));
     }
 
+    @Test
+    public void DoppelNamen() {
+        assertEquals("Hans Peter Fischer", Namen.validateName("Fischer, Hans Peter"));
+    }
+
     
 }
