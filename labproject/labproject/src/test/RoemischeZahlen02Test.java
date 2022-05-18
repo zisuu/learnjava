@@ -12,6 +12,20 @@ public class RoemischeZahlen02Test {
     }
 
     @Test
+    public void zuRoemischPositiv(){
+        assertEquals("MCMXCIX", RoemischeZahlen02.generateRomanString(1999));
+        assertEquals("MCDXLIV", RoemischeZahlen02.generateRomanString(1444));
+        assertEquals("MMMIII", RoemischeZahlen02.generateRomanString(3003));
+    }
+
+    @Test
+    public void zuRoemischNegativ(){
+        assertEquals("-MCMXCIX", RoemischeZahlen02.generateRomanString(-1999));
+        assertEquals("-MCDXLIV", RoemischeZahlen02.generateRomanString(-1444));
+        assertEquals("-MMMIII", RoemischeZahlen02.generateRomanString(-3003));
+    }
+
+    @Test
     public void einerMitSubtraktion() {
         assertEquals(999, RoemischeZahlen02.validateRomanString("CMXCIX"));
     }
@@ -33,7 +47,7 @@ public class RoemischeZahlen02Test {
 
     @Test
     public void nichtZuVieleWiederholungenTausender() {
-        assertEquals(4000, RoemischeZahlen02.validateRomanString("MMMM"));
+        assertEquals(3000, RoemischeZahlen02.validateRomanString("MMM"));
     }
     
     @Test(expected = IllegalArgumentException.class)
