@@ -11,10 +11,9 @@ import java.util.regex.*;
  * @version 1.0
  */
 public class Flugnummern {
-    public static void main(String[] args) {
-        String[] postfach = new String []{"Hans Fischer", "RTestmail 12235", "HE-877665436", "sdgsdfas124w-as12", "ZH-454", "-BE-1111"};
-        findFlightNumber(postfach);
-    }
+
+    //Regex to find flightNumber
+    private static final Pattern FLIGHTNUMBER_PATTERN = Pattern.compile("[A-Z]{2}-\\d+");
 
     /**
      * Durchsucht das StringArray postFach nach Flugnummern.
@@ -23,20 +22,15 @@ public class Flugnummern {
      * @return die Flugnummern
      * @throws IllegalArgumentException wenn keine Flugnummern gefunden
      */
-    public static void findFlightNumber(String [] postfach){
-        String flightNumber = "";
-         // TODO: Regex Anpassen    
-        Pattern FLIGHTNUMBER_PATTERN = Pattern.compile("(^[A-Z]{2}[-]\\d+)");
-        if (postfach == null){
-            throw new IllegalArgumentException("Postfach darf nicht null sein");
-        }
+    public static String findFlightNumber(String [] postfach){
+
         for (int i = 0; i < postfach.length; i++) {
             Matcher matcher = FLIGHTNUMBER_PATTERN.matcher(postfach[i]);
             if (matcher.find()) {
-                String result = matcher.group(0);
-                System.out.println(result);
+                return matcher.group();
             }
         }
+        return null;
     }
     
 }

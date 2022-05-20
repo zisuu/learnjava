@@ -6,10 +6,17 @@ import app.Kap8.Flugnummern;
 
 public class FlugnummernTest {
 
-    // @Test
-    // public void normal() {
-    //     String[] postfach = new String []{"Hans Fischer", "RTestmail 12235", "HE-877665436", "sdgsdfas124w-as12", "ZH-454", "-BE-1111"};
-    //     String result = "HE-877665436,ZH-454";
-    //     assertEquals(result, Flugnummern.findFlightNumber(postfach));
-    // }
+
+    @Test
+    public void keineFlugnummer() {
+        String[] testArray = new String[]{"Hier ist keine Nummer", "Hier auch nicht", "Und hier schon gar nicht"};
+        assertNull(Flugnummern.findFlightNumber(testArray));
+    }
+
+    @Test
+    public void eineFlugnummer() {
+        String[] testArray = new String[]{"Hier ist keine Nummer", "Hier auch nicht", "Aber LH-1234 hier"};
+        assertEquals("LH-1234", Flugnummern.findFlightNumber(testArray));
+
+    }
 }

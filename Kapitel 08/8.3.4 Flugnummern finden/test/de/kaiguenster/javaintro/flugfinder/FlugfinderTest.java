@@ -16,5 +16,6 @@ public class FlugfinderTest {
         String[] testArray = new String[]{"Hier ist keine Nummer", "Hier auch nicht", "Aber LH-1234 hier"};
         assertEquals("LH-1234", Flugfinder.findeFlugnummer(testArray));
     }
+
     
 }
