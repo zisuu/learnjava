@@ -41,4 +41,17 @@ public class Fehlerbehandlung {
             return (zahl / 2);
         }
     }
+
+    protected void a() throws IOException {
+
+    }
+
+}
+
+class Extend extends Fehlerbehandlung {
+
+    @Override
+    protected void a() {
+    }
+
 }
