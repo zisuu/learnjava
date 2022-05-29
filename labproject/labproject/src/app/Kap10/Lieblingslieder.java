@@ -1,5 +1,7 @@
 package app.Kap10;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,13 +20,8 @@ public class Lieblingslieder {
 
     private Map<String, List<Song>> daten = new HashMap<>();
 
-    // public static void main(String[] args) {
-    // Lieblingslieder mylist = new Lieblingslieder();
-    // mylist.fuegeLiedHinzu("Hans", "Hanssong");
-    // }
-
     /**
-     * FÜge für einen Benutzer ein Lieblingslied hinzu.
+     * Füge für einen Benutzer ein Lieblingslied hinzu.
      * 
      * @param benutzer der Benutzer
      * @param song     sein neues Lieblingslied
@@ -34,29 +31,41 @@ public class Lieblingslieder {
         findeListeFuerBenutzer(benutzer).add(song);
     }
 
-    public void fuegeLiedHinzu(String name, List<Song> songs){
-
-        //Der Booklist zwei Books hinzufügen
-        booklist.add(new Book(…));
-        booklist.add(new Book(…));
-        //Das zweite Buch durch ein anderes ersetzen
-        booklist.set(1, new Book(…));
-        //Alle Buecher anzeigen
-        for (Book book : booklist){
-            System.out.println(book.getTitel());
+    /**
+     * Hilfsmethode, die die Liste für einen Benutzer findet, oder eine Liste erzeugt,
+     * falls sie noch nicht existiert.
+     * @param benutzer der Benutzer
+     * @return die Liste seiner Lieblingslieder. Kann leer sein, aber niemals null
+     */
+    public List<Song> findeListeFuerBenutzer(String benutzer) {
+        // Prüfen, ob eine Liste für den Benutzuer existiert
+        List<Song> ergebnis = daten.get(benutzer);
+        if (ergebnis == null) {
+            // Falls nicht, wird eine Liste erzeugt und in daten gespeichert
+            ergebnis = new ArrayList<>();
+            daten.put(benutzer, ergebnis);
         }
-
-        daten.put(name, songs.add(e));
+        // ergenis ist nun in jedem Fall eine Liste, die zurückgegeben wird.
+        return ergebnis;
     }
 
-    public Song findeLieblingslieder(String name) {
-        return daten.get(name);
+    /**
+     * Leere die Liste mit Lieblingssongs des Benutzers
+     * @param benutzer
+     * @return
+     */
+    public List<Song> leereListe(String benutzer){
+        return daten.remove(benutzer);
     }
 
-    public void schreibeLieblingslieder() {
-
-        for (Map.Entry<String, List<Song>> entry : daten.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
-        }
+    /**
+     * Finde die Liste von Lieblingsliedern eines Benutzers. 
+     * @param benutzer der Benutzer
+     * @return die Liste seiner Lieblingslieder als unveränderliche Liste, oder null, 
+     * falls der Benutzer unbekannt ist.
+     */
+    public List<Song> getList(String benutzer){
+        List<Song> ergebnis = daten.get(benutzer);
+        return ergebnis == null ? null : Collections.unmodifiableList(ergebnis);
     }
 }
