@@ -1,0 +1,232 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch FindBiggestNumber",
+            "request": "launch",
+            "mainClass": "app.Kap10.FindBiggestNumber",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch MutlidimensionalArray",
+            "request": "launch",
+            "mainClass": "app.Kap10.MutlidimensionalArray",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch ParallelSort",
+            "request": "launch",
+            "mainClass": "app.Kap10.ParallelSort",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch Durchschnittstemperaturen",
+            "request": "launch",
+            "mainClass": "app.Kap11.Durchschnittstemperaturen",
+            "projectName": "labproject_3808de47",
+            "args": "src/app/Kap11/temperatur.csv"
+        },
+        {
+            "type": "java",
+            "name": "Launch IntStreamTest",
+            "request": "launch",
+            "mainClass": "app.Kap11.IntStreamTest",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch Calculating",
+            "request": "launch",
+            "mainClass": "app.Kap2.Calculating",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ternaer",
+            "request": "launch",
+            "mainClass": "app.Kap2.Ternaer",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch BMI",
+            "request": "launch",
+            "mainClass": "app.Kap3.BMI",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch Booleanex",
+            "request": "launch",
+            "mainClass": "app.Kap3.Booleanex",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch Kartennamen",
+            "request": "launch",
+            "mainClass": "app.Kap3.Kartennamen",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch RockinROM",
+            "request": "launch",
+            "mainClass": "app.Kap3.RockinROM",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch RockinROM2",
+            "request": "launch",
+            "mainClass": "app.Kap3.RockinROM2",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch RockinROM3",
+            "request": "launch",
+            "mainClass": "app.Kap3.RockinROM3",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch SolitaireRumpf",
+            "request": "launch",
+            "mainClass": "app.Kap3.SolitaireRumpf",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch StarTrek",
+            "request": "launch",
+            "mainClass": "app.Kap3.StarTrek",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch ForSchlaufen",
+            "request": "launch",
+            "mainClass": "app.Kap4.ForSchlaufen",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch GGT",
+            "request": "launch",
+            "mainClass": "app.Kap4.GGT",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch KGV",
+            "request": "launch",
+            "mainClass": "app.Kap4.KGV",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tabelle",
+            "request": "launch",
+            "mainClass": "app.Kap4.Tabelle",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch Zahlenpruefen",
+            "request": "launch",
+            "mainClass": "app.Kap4.Zahlenpruefen",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch Zahlraten",
+            "request": "launch",
+            "mainClass": "app.Kap4.Zahlraten",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch Musikplayer",
+            "request": "launch",
+            "mainClass": "app.Kap5.Musikplayer",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestProgramm",
+            "request": "launch",
+            "mainClass": "app.Kap6.TestProgramm",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch TierTestProgramm",
+            "request": "launch",
+            "mainClass": "app.Kap6.Tiere.TierTestProgramm",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch BMI(1)",
+            "request": "launch",
+            "mainClass": "app.Kap7.BMI",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch Fakultaet",
+            "request": "launch",
+            "mainClass": "app.Kap8.Fakultaet",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch Namen",
+            "request": "launch",
+            "mainClass": "app.Kap8.Namen",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pythagoras",
+            "request": "launch",
+            "mainClass": "app.Kap8.Pythagoras",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch RoemischeZahlen01",
+            "request": "launch",
+            "mainClass": "app.Kap8.RoemischeZahlen01",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch RoemischeZahlen02",
+            "request": "launch",
+            "mainClass": "app.Kap8.RoemischeZahlen02",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch Fehlerbehandlung",
+            "request": "launch",
+            "mainClass": "app.Kap9.Fehlerbehandlung",
+            "projectName": "labproject_3808de47"
+        }
+    ]
+}
