@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Fibonacci",
+            "request": "launch",
+            "mainClass": "app.Kap11.Fibonacci",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
