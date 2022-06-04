@@ -6,6 +6,14 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Wetterstatistik",
+            "request": "launch",
+            "mainClass": "app.Kap11.Wetterstatistik",
+            "projectName": "labproject_3808de47",
+            "args": "src/app/Kap11/temperatur.csv"
+        },
+        {
+            "type": "java",
             "name": "Launch Fibonacci",
             "request": "launch",
             "mainClass": "app.Kap11.Fibonacci",
