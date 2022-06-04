@@ -24,7 +24,7 @@ public class Wetterstatistik {
             System.exit(1);
         }
         String dateiname = args[0];
-        // monatsdurchschnitt(dateiname);
+        monatsdurchschnitt(dateiname);
         jahresdurchschnitt(dateiname);
     }
 
