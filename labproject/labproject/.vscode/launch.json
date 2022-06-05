@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch FileCopy",
+            "request": "launch",
+            "mainClass": "app.Kap12.FileCopy",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
             "name": "Launch Wetterstatistik",
             "request": "launch",
             "mainClass": "app.Kap11.Wetterstatistik",
