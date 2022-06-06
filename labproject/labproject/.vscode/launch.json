@@ -6,6 +6,21 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch DateiLeser",
+            "request": "launch",
+            "mainClass": "app.Kap12.DateiLeser",
+            "projectName": "labproject_3808de47",
+            "args": "README.md"
+        },
+        {
+            "type": "java",
+            "name": "Launch MyFileReader",
+            "request": "launch",
+            "mainClass": "app.Kap12.MyFileReader",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
             "name": "Launch MusicFinder",
             "request": "launch",
             "mainClass": "app.Kap12.MusicFinder",
