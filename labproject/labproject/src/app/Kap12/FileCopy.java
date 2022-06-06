@@ -1,9 +1,7 @@
 package app.Kap12;
 
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 
 /**
  * Programm, um eine Datei zu kopieren.
@@ -29,7 +27,6 @@ public class FileCopy {
             // Kopiere Datei
             Files.copy(quelle.toPath(), ziel.toPath()).toFile();
         } catch (Exception e) {
-            // TODO: handle exception
             throwError(e.getMessage());
         }
     }
