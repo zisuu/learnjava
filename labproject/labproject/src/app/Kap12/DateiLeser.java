@@ -27,6 +27,7 @@ public class DateiLeser {
             }
         }
     }
+    
     private static void vearbeitePuffer(char[] geleseneDaten) {
         String contents = new String(geleseneDaten);
         System.out.println(contents);
