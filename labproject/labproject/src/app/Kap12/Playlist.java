@@ -3,14 +3,15 @@ package app.Kap12;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.StringWriter;
+import java.io.Reader;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Einmal mehr sollen Sie eine Playlist-Klasse schreiben. Sie hat nichts mit den Klassen aus den vorigen Kapiteln zu tun, 
@@ -27,8 +28,6 @@ import java.util.List;
  * Zuletzt soll eine Methode verifiziere für jeden Eintrag der Playlist prüfen, ob die Datei noch existiert, und im Negativfall 
  * den Eintrag aus der Liste entfernen.
  * 
- * Schreiben Sie dann zwei Programme PlaylistSchreiber und PlaylistChecker. PlaylistSchreiber erwartet ein Verzeichnis und 
- * einen Dateinamen als Aufrufparameter, erzeugt eine Playlist aus dem Verzeichnis und speichert sie in der benannten Datei. 
  * PlaylistChecker erwartet eine Playlist-Datei als Parameter, liest diese ein, verifiziert sie und schreibt die bereinigte 
  * Playlist wieder in die Datei.
  */
@@ -51,8 +50,27 @@ public class Playlist {
      * alle MP3-Dateien aus einem Verzeichnis und seinen Unterverzeichnissen enthält. Sie können dazu die Klasse Musikfinder 
      * aus der vorigen Übung weiterverwenden.
      */
-    public static void ausVerzeichnis(){
-        
+    /**
+     * Erzeuge eine Playlist aus allen MP3s eines Verzeichnis.
+     * @param startVerzeichnis
+     * @return eine Playlist mit allen MP3-Dateien im Startverzeichnis und seinen Unterverzeichnissen
+     */
+    public static Playlist ausVerzeichnis(File startVerzeichnis) {
+        Playlist playlist = new Playlist();
+        new MusicFinder(startVerzeichnis).findMusic(datei -> playlist.addSong(datei.getAbsolutePath()));
+        return playlist;
+    }
+
+    /**
+     * Verifizieren den Inhalt dieser Playliste, entferne nicht mehr existierende Dateien
+     * @return die Anzahl entfernter Dateien
+     */
+    public int verifiziere(){
+        int vorher = thePlaylist.size();
+        thePlaylist = thePlaylist.stream()
+                .filter(song -> new File(song).exists())
+                .collect(Collectors.toList());
+        return vorher - thePlaylist.size();
     }
 
     /**
@@ -76,15 +94,27 @@ public class Playlist {
                 buffWriter.write(song);
                 buffWriter.newLine();
             }
-
         }
     }
 
+    /**
+     * Lesen einer Playlist aus einer Datei
+     * @param quelle die Quelldatei
+     * @return ein Playlist-Objekt
+     * @throws IOException 
+     */
+    public static Playlist lese(File quelle) throws IOException{
+        return lese(new FileReader(quelle));
+    }
     
     // Eine statische Methode lese soll eine solche Datei einlesen und wieder ein Playlist-Objekt daraus erzeugen.
-    public static void lese() {
-      
+    public static Playlist lese(Reader datei) throws FileNotFoundException, IOException {
+        try (BufferedReader buffReader = new BufferedReader(datei)){
+            Playlist playlist = new Playlist();
+            //Lies die Datei Zeilenweise, füge jede Zeile der Playlist hinzu.
+            buffReader.lines().forEach(playlist::addSong);
+            return playlist;
+        }
     }
-
 
 }
