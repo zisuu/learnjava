@@ -12,7 +12,6 @@ public class Javadoc {
  //Javadoc einer Klasse
  /**
  * Programm zum Umkehren von Strings in der Kommandozeile. 
- * @author Kai
  * @version 1.0
  */
 
