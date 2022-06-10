@@ -172,7 +172,7 @@ public class Song {
     public void setLaenge(Integer stunden, Integer minuten, Integer sekunden) {
         /*
          * aus den übergebenen Werten wird die Gesamtlänge in Sekunden berechnet und
-         * diese gesetzt. Von außen ist das aber nicht sichtbar, einem Benutzer dieser
+         * diese gesetzt. Von aussen ist das aber nicht sichtbar, einem Benutzer dieser
          * Klasse ist egal, in welcher Form die Länge intern gespeichert wird. Das ist
          * "implementation hiding".
          */

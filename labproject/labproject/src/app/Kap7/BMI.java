@@ -15,11 +15,11 @@ public class BMI {
     /**
      * mit diesem Programm sollen der BMI-(Body-Mass-Index-) berechnet werden
      * können.
-     * Dazu müssen zunächst Größe und Gewicht des Benutzers abgefragt werden.
-     * Aus diesen Angaben wird der BMI nach der Formel BMI = Gewicht ÷ Größe2
+     * Dazu müssen zunächst Grösse und Gewicht des Benutzers abgefragt werden.
+     * Aus diesen Angaben wird der BMI nach der Formel BMI = Gewicht ÷ Grösse2
      * berechnet.
-     * Dazu wird das Gewicht in Kilogramm und die Größe in Metern benötigt.
-     * aber es ist etwas einfacher, die Größe in Zentimetern eingeben zu lassen und
+     * Dazu wird das Gewicht in Kilogramm und die Grösse in Metern benötigt.
+     * aber es ist etwas einfacher, die Grösse in Zentimetern eingeben zu lassen und
      * umzurechnen,
      * so müssen Sie sich nicht um das Eingabeformat der Dezimalzahl kümmern.
      * 

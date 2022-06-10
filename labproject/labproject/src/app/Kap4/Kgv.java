@@ -8,7 +8,6 @@ import java.io.InputStreamReader;
  * Programm zur Berechnung des kleinsten gemeinsamen Vielfachen (KGV) zweier
  * Zahlen
  *
- * @author Kai
  */
 public class KGV {
 
@@ -41,18 +40,18 @@ public class KGV {
         if (zahl1 <= 0 || zahl2 <= 0) {
             throw new IllegalArgumentException("Beide Zahlen müssen >0 sein.");
         }
-        //Sicherstellen, dass zahl1 die größere ist.
+        //Sicherstellen, dass zahl1 die grössere ist.
         if (zahl1 < zahl2) {
             int temp = zahl1;
             zahl1 = zahl2;
             zahl2 = temp;
         }
         int multiplikator = 1;
-        //Vielfache der größeren Zahl in einer Schleife testen, ob sie auch Vielfache der kleineren Zahl sind.
+        //Vielfache der grösseren Zahl in einer Schleife testen, ob sie auch Vielfache der kleineren Zahl sind.
         while ((zahl1 * multiplikator) % zahl2 != 0) {
             //Prüfen, ob bei der nächsten Multiplikation ein Überlauf eintreten würde. Falls ja: Fehler!
             if (Integer.MAX_VALUE - zahl1 < zahl1 * multiplikator) {
-                throw new ArithmeticException("KGV ist größer als Wertebereich.");
+                throw new ArithmeticException("KGV ist grösser als Wertebereich.");
             }
             multiplikator++;
         }

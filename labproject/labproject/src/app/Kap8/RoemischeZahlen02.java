@@ -102,7 +102,7 @@ public enum RoemischeZahlen02 {
      */
     public static int validateRomanString(String roemisch) {
         int zahl = 0;
-        // die übergebene römische Zahl wird in Großbuchtaben umgesetzt, um auch
+        // die übergebene römische Zahl wird in Grossbuchtaben umgesetzt, um auch
         // Eingaben wie "xii" zu erlauben.
         roemisch = roemisch.toUpperCase();
         RoemischeZahlen02[] alleZiffern = RoemischeZahlen02.values();

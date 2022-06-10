@@ -8,7 +8,6 @@ import java.util.Comparator;
 /**
  * Eine Klasse, um Ihren persönlichen Fernsehkalender zu erzeugen.
  *
- * @author Kai Günster
  */
 public class Fernsehkalender {
 
@@ -16,7 +15,7 @@ public class Fernsehkalender {
      * Berechnet Ihren persönlichen Fernsehkalender. Aus einem Array von
      * {@link Fernsehserie}n wird ein Array von {@link Folge}n berechnet, mit
      * der genauen Ausstrahlungszeit. Voraussetzung ist natürlich, dass die
-     * Ausstrahlung regelmäßig ist.
+     * Ausstrahlung regelmässig ist.
      *
      * @param serien ein Array von {@link Fernsehserie}n mit dem
      * Ausstrahlungsdatum der ersten Folge in der Zeitzone der Ausstrahlung

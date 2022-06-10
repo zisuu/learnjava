@@ -4,7 +4,7 @@ import java.util.regex.*;
 
 /**
  * Schreiben Sie eine Methode, die reguläre Ausdrücke benutzt, um ein String-Array – Ihr Postfach – 
- * nach der ersten Flugnummer zu durchsuchen. Eine Flugnummer besteht immer aus zwei Großbuchstaben, 
+ * nach der ersten Flugnummer zu durchsuchen. Eine Flugnummer besteht immer aus zwei Grossbuchstaben, 
  * gefolgt von einem Bindestrich, gefolgt von einer Reihe von Ziffern.
  * 
  * @author Dave

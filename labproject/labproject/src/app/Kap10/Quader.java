@@ -5,7 +5,7 @@ package app.Kap10;
  * Kernen wesentlich schneller ist als sequenzielle Sortierung. Zeit, das auf die Probe zu stellen.
  * 
  * OK: Schreiben Sie eine Klasse Quader, die drei int-Felder enthält: Länge, Breite und Höhe des Quaders. 
- * OK: Außerdem soll die Klasse eine Methode getVolumen haben, die das Volumen des Quaders berechnet. 
+ * OK: Ausserdem soll die Klasse eine Methode getVolumen haben, die das Volumen des Quaders berechnet. 
  * OK: Quader sollen durch ihr Volumen eine natürliche Ordnung haben.
  * 
  */
@@ -38,7 +38,7 @@ public class Quader implements Comparable{
     /**
      * Quader werden nach Volumen sortiert.
      * @param o ein anderes Quader
-     * @return eine negative Zahl wenn <code>o</code> größer ist als 
+     * @return eine negative Zahl wenn <code>o</code> grösser ist als 
      * <code>this</code>, eine positive Zahl wenn es kleiner ist, 0 wenn beide gleich sind. 
      * @throws ClassCastException wenn <code>o</code> kein Quader ist.
      */

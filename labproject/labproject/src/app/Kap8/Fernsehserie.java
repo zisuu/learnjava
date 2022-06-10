@@ -6,7 +6,6 @@ import java.time.ZonedDateTime;
  * Datenklasse für eine Fensehserie: enthält Name, Ausstrahlungszeit der ersten
  * Folge in lokaler Zeit und die Anzahl Folgen
  *
- * @author Kai Günster
  */
 public class Fernsehserie {
 

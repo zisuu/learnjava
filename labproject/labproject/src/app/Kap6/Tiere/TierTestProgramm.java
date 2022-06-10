@@ -3,7 +3,7 @@ package app.Kap6.Tiere;
 /**
  * Klasse TierTestProgramm
  * 
-* Schreiben Sie anschließend ein Programm, das einen Dackel, einen Dobermann
+* Schreiben Sie anschliessend ein Programm, das einen Dackel, einen Dobermann
 * und eine Katze instanziiert, diese drei
 * Felder über die Zugriffsmethoden befüllt und die Objekte auf die
 * Kommandozeile ausgibt.

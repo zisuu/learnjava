@@ -5,7 +5,7 @@ import java.util.function.IntUnaryOperator;
 /**
  * Schreiben Sie eine Methode, die mathematische Funktionen auf int[]-Arrays
  * anwendet.
- * Das heißt, Ihre Methode soll ein int[] und eine Rechenvorschrift als
+ * Das heisst, Ihre Methode soll ein int[] und eine Rechenvorschrift als
  * Parameter annehmen
  * und ein Array zurückgeben, das die Ergebnisse der Rechenvorschrift angewendet
  * auf die

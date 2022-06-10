@@ -14,7 +14,6 @@ import java.util.stream.Stream;
  * Programm, um Durschnittstemparaturen eines Jahres und eines Monats über
  * mehrere Jahre zu berechnen.
  *
- * @author Kai Günster
  */
 public class Wetterstatistik {
 

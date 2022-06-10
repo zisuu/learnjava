@@ -9,8 +9,7 @@ package app.Kap10;
  * 1, 2 und 1 die Koeffizienten, die aus der dritten Zeile des Dreiecks abgelesen
  * werden können.
  * Jedes Dreieck enthält so viele Zeile, wie im Konstruktor übergeben. Werden 
- * größere Zeilen benötigt, muss ein neues Dreieck berechnet werden.
- * @author Kai Günster
+ * grössere Zeilen benötigt, muss ein neues Dreieck berechnet werden.
  */
 public class PascalsDreieck {
 
@@ -34,7 +33,7 @@ public class PascalsDreieck {
      */
     public int[] getZeile(int zeile){
         if (zeile >= dreieck.length){
-            throw new IllegalArgumentException("Zeile liegt außerhalb dieses Dreiecks");
+            throw new IllegalArgumentException("Zeile liegt ausserhalb dieses Dreiecks");
         }
         return dreieck[zeile];
     }
@@ -47,7 +46,7 @@ public class PascalsDreieck {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < dreieck.length - 1; i++){
             /*
-            Für jede Zeile außer der letzen wird ein String erzeugt, der links 
+            Für jede Zeile ausser der letzen wird ein String erzeugt, der links 
             und rechts die gleiche Zahl Leerzeichen hat. Dieser wird an einen 
             StringBuilder angehangen.
             */
@@ -96,7 +95,7 @@ public class PascalsDreieck {
         for (int i = 0; i < fuellung; i ++){
             /*
             Füge die benötigten Leerzeichen am Anfang der Zeile ein.
-            Am Ende wird nichts eingefügt, denn abschließende Leerzeichen wäre 
+            Am Ende wird nichts eingefügt, denn abschliessende Leerzeichen wäre 
             ohnehin nicht sichtbar.
             */
             sb.insert(letzteZeileStart, " ");

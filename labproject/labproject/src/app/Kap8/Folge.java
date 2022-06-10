@@ -7,7 +7,6 @@ import java.util.Objects;
  * Datenklasse für eine Folge eine Fernsehserie. Enthält den Namen der Serie,
  * die Zahl der Episode und die Ausstrahlungszeit in lokaler Zeit.
  *
- * @author Kai Günster
  */
 public class Folge {
 

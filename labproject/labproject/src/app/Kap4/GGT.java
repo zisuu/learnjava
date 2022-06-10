@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Programm zur Ermittlung des größten gemeinsamen Teilers (GGT) zweier Zahlen.
+ * Programm zur Ermittlung des grössten gemeinsamen Teilers (GGT) zweier Zahlen.
  *
  * @author zisuu
  */
@@ -21,7 +21,7 @@ public class GGT {
         // Den GGT berechnen
         int ggt = ggt(zahl1, zahl2);
         // Ausgeben
-        System.out.println("Der größte gemeinsame Teiler ist: " + ggt);
+        System.out.println("Der grösste gemeinsame Teiler ist: " + ggt);
     }
 
     /**
@@ -43,19 +43,19 @@ public class GGT {
         if (zahl1 == 0)
             return zahl2;
         /**
-         * Der größte gemeinsame Teiler zweier Zahlen a und b wird wie folgt berechnet:
-         * Ist a = 0, so ist b der größte gemeinsame Teiler.
+         * Der grösste gemeinsame Teiler zweier Zahlen a und b wird wie folgt berechnet:
+         * Ist a = 0, so ist b der grösste gemeinsame Teiler.
          * Andernfalls führen Sie, solange b ungleich 0 ist, die folgenden Schritte
          * durch:
          * Ist a > b, dann ziehen Sie b von a ab, um den neuen Wert von a zu berechnen.
          * Anderenfalls ziehen Sie a von b ab, um den neuen Wert von b zu berechnen.
-         * Der nun in a gespeicherte Wert ist der größte gemeinsame Teiler.
+         * Der nun in a gespeicherte Wert ist der grösste gemeinsame Teiler.
          */
         // Ist zahl1 0, dann ist zahl2 bereits das Ergebnis.
         if (zahl1 == 0) {
             return zahl2;
         }
-        //Solange zahl2 nicht 0 ist, ziehe wiederholt die kleinere Zahl von der größeren ab.
+        //Solange zahl2 nicht 0 ist, ziehe wiederholt die kleinere Zahl von der grösseren ab.
         while (zahl2 != 0) {
             if (zahl1 > zahl2) {
                 zahl1 = zahl1 - zahl2;

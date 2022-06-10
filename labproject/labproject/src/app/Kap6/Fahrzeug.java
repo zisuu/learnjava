@@ -5,7 +5,7 @@ import java.util.Comparator;
 /**
  * Klasse Fahrzeug
  * 
- * Ihre Aufgabe in dieser größeren Übung besteht darin, die Domäne Fahrzeuge zu
+ * Ihre Aufgabe in dieser grösseren Übung besteht darin, die Domäne Fahrzeuge zu
  * modellieren. Alle Fahrzeuge haben die
  * folgenden Eigenschaften und Methoden:
  * OK: - Modell, Eigenschaft, String: Marke und Modell des Fahrzeugs, zum
@@ -29,7 +29,7 @@ import java.util.Comparator;
  * auf ebener Strecke.
  * OK: Einige dieser Fahrzeuge sind motorisiert. Das bringt keine zusätzlichen
  * Eigenschaften oder Fähigkeiten mit sich,
- * soll aber markiert werden. Außerdem sind LKWs und Lieferwagen eine spezielle
+ * soll aber markiert werden. Ausserdem sind LKWs und Lieferwagen eine spezielle
  * Art von PKW, nämlich Transporter.
  * Transporter haben zusätzlich folgende Methoden:
  * - lade, Methode(String), void: Im String-Parameter steht die Ladung, die in

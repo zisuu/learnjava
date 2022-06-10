@@ -5,16 +5,16 @@ import java.util.Random;
 
 /**
  * Schreiben Sie dann ein Programm, das nacheinander zufällige Quader-Arrays der
- * Größe 10, 100, 1.000 … 10.000.000 erzeugt. Um zufällige Quadergrößen zu
+ * Grösse 10, 100, 1.000 … 10.000.000 erzeugt. Um zufällige Quadergrössen zu
  * erzeugen,können Sie die Klasse java.util.Random verwenden; limitieren
- * Sie die Quadergröße dabei in jede
+ * Sie die Quadergrösse dabei in jede
  * Richtung auf 100.
  * 
  * Jedes dieser Arrays soll einmal sequenziell und einmal parallel sortiert
  * werden. Messen Sie jeweils
  * von beiden Sortierungen die Zeit, und geben Sie sie aus.
  * 
- * Vergleichen Sie, ab welcher Array-Größe parallele Sortierung Vorteile bringt.
+ * Vergleichen Sie, ab welcher Array-Grösse parallele Sortierung Vorteile bringt.
  */
 
 public class ParallelSort {
