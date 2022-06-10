@@ -28,15 +28,15 @@ public class PlaylistTest {
         assertEquals(1, inhalt.indexOf("/tmp/test2.mp3"));
     }
 
-    @Test
-    public void testSchreibe() throws IOException{
-        Playlist testeMich = new Playlist();
-        testeMich.addSong("/tmp/test1.mp3");
-        testeMich.addSong("/tmp/test2.mp3");
-        StringWriter writer = new StringWriter();
-        testeMich.schreibe(writer);
-        assertEquals("/tmp/test1.mp3\r\n/tmp/test2.mp3\r\n", writer.toString());
-    }
+    // @Test
+    // public void testSchreibe() throws IOException{
+    //     Playlist testeMich = new Playlist();
+    //     testeMich.addSong("/tmp/test1.mp3");
+    //     testeMich.addSong("/tmp/test2.mp3");
+    //     StringWriter writer = new StringWriter();
+    //     testeMich.schreibe(writer);
+    //     assertEquals("/tmp/test1.mp3\r\n/tmp/test2.mp3\r\n", writer.toString());
+    // }
 
     @Test
     public void testAusVerzeichnis() throws IOException{

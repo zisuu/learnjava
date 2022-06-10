@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Song",
+            "request": "launch",
+            "mainClass": "app.Kap12.Song",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
             "name": "Launch PlaylistChecker",
             "request": "launch",
             "mainClass": "app.Kap12.PlaylistChecker",
