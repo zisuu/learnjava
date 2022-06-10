@@ -1,4 +1,4 @@
-package app.Kap12;
+package de.kaiguenster.javaintro.musikfinder;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -13,6 +13,7 @@ import java.util.Objects;
  * Eine Java-Klasse, um die im ID3v1 Tag einer MP3-Datei gespeicherten
  * Informationen aufzunehmen
  *
+ * @author Kai Günster
  */
 public class Song {
 
