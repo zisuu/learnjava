@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e569230c-0f25-4f82-b53a-a848ba14510c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../labproject/labproject/bin/app/Kap12/FileCopy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../labproject/labproject/bin/app/Kap12/FileCopy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../labproject/labproject/src/app/Kap12/FileCopy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../labproject/labproject/src/app/Kap12/FileCopy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../labproject/labproject/bin/app/Kap12/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../labproject/labproject/bin/app/Kap12/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../labproject/labproject/bin/app/Kap12/Song.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../labproject/labproject/bin/app/Kap12/Song.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../labproject/labproject/bin/test/PlaylistTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../labproject/labproject/bin/test/SongTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../labproject/labproject/bin/test/SongTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../labproject/labproject/src/app/Kap12/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../labproject/labproject/src/app/Kap12/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../labproject/labproject/src/app/Kap12/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../labproject/labproject/src/app/Kap12/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../labproject/labproject/src/test/PlaylistTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../labproject/labproject/src/test/SongTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../labproject/labproject/src/test/SongTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

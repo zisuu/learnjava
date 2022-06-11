@@ -1,4 +1,4 @@
-package de.kaiguenster.javaintro.musikfinder;
+package app.Kap12;
 
 import java.io.BufferedInputStream;
 import java.io.File;
