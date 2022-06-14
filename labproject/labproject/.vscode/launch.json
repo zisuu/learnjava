@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Labthreads",
+            "request": "launch",
+            "mainClass": "app.Kap13.Labthreads",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch LabThreads",
+            "request": "launch",
+            "mainClass": "app.Kap13.LabThreads",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch Threads",
+            "request": "launch",
+            "mainClass": "app.Kap13.Threads",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
             "name": "Launch Song",
             "request": "launch",
             "mainClass": "app.Kap12.Song",
