@@ -1,24 +1,16 @@
 package app.Kap13;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.nio.charset.Charset;
 
 public class SinglethreadedServer {
 
     private final int port;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         // Prüfe Aufrufparameter: Der Server soll mit einem Port und einem
         // Verzeichnis als Aufrufparameter gestartet werden.
         if (args.length != 1) {
@@ -31,8 +23,10 @@ public class SinglethreadedServer {
         if (port < 1024 || port > 65535) {
             throwError(port + " ist nicht im Range der dynamischen TCP Ports von 1024 bis 65535!");
         }
-        // starte Server und warte bis Verbindung aufgebaut ist
-        new SinglethreadedServer(port).erwarteVerbindung(port);
+        while (true){
+            // starte Server und warte bis Verbindung aufgebaut ist
+            new SinglethreadedServer(port).erwarteVerbindung(port);
+        }
     }
 
     /**
@@ -55,17 +49,19 @@ public class SinglethreadedServer {
         this.port = port;
     }
 
-    public void erwarteVerbindung(Integer port) throws IOException {
-        ServerSocket server = new ServerSocket(port);
-        try (Socket verbindung = server.accept()) {
-            verarbeiteVerbindung(verbindung);
-        }
+    public void erwarteVerbindung(Integer port) throws IOException, InterruptedException {
+            ServerSocket server = new ServerSocket(port);
+            try (Socket verbindung = server.accept()) {
+                Thread.sleep(2000); // set time delay to 2 seconds
+                verarbeiteVerbindung(verbindung);
+            }
+            server.close();
     }
 
     private void verarbeiteVerbindung(Socket verbindung) throws IOException {
         BufferedWriter writer = new BufferedWriter(
                 new OutputStreamWriter(verbindung.getOutputStream()));
-        String antwort = "das ist ein Test";
+        String antwort = "This is just a test!";
         writer.write(antwort);
         writer.newLine();
         writer.flush();
