@@ -7,46 +7,93 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * Die dritte Klasse soll ein weiterer Server sein und den Namen
- * MultithreadedServer tragen.
- * Dieser Server soll für jede angenommene Verbindung einen neuen Thread
- * starten, in diesem
- * Thread 10 Sekunden warten und dann Text in den Socket schreiben. Führen Sie
- * Ihren Client
- * auch mit diesem Server aus, und beobachten Sie, wie sich das Verhalten
- * ändert. Die Lösung
- * zu dieser Übung finden Sie im Anhang.
+ * Server für die Klasse {@link app.Kap13.Client}, der
+ * alle Verbindungen in eigenen Threads bearbeitet
+ *
  */
-public class MultithreadedServer implements Runnable {
-    Socket csocket;
+public class MultithreadedServer {
 
-    MultithreadedServer(Socket csocket) {
-           this.csocket = csocket;
-        }
+    private final int port;
 
     public static void main(String args[]) throws Exception {
-        ServerSocket ssock = new ServerSocket(1234);
-        System.out.println("Listening");
+        // Aufrufparameter prüfen
+        if (args.length != 1) {
+            endeMitFehler("Aufruf: java de.kaiguenster.javaintro.singlethreadedserver.SinglethreadedServer <Port>");
+        }
+        if (!args[0].matches("\\d+")) {
+            endeMitFehler(args[1] + " ist kein gültiger Port.");
+        }
+        int port = Integer.parseInt(args[0]);
+        if (port <= 1024) {
+            endeMitFehler("Ports unter 1024 sind reserviert");
+        }
+        if (port > 65535) {
+            endeMitFehler("Der höchte Port ist 65535");
+        }
+        // Server-Objekt erzeugen und auf Verbindungen warten
+        new MultithreadedServer(port).erwarteVerbindung();
+    }
 
+    private static void endeMitFehler(String nachricht) {
+        System.out.println(nachricht);
+        System.exit(1);
+    }
+
+    /**
+     * Erzeuge einen Server
+     * 
+     * @param port Listen-Port
+     */
+    private MultithreadedServer(int port) {
+        this.port = port;
+    }
+
+    /**
+     * Warte auf Verbindung und verarbeite sie.
+     * 
+     * @throws IOException
+     */
+    private void erwarteVerbindung() throws IOException {
+        ServerSocket server = new ServerSocket(port);
+        // Diese Schleife läuft, bis das Programm von aussen gestoppt wird (z.B. CNTR+C)
         while (true) {
-            Socket sock = ssock.accept();
-            System.out.println("Connected");
-            Thread.sleep(10000); // set time delay to 10 seconds
-            new Thread(new MultithreadedServer(sock)).start();
+            // Warte auf Verbindungen
+            final Socket sock = server.accept();
+            // Wird eine Verbidnung angenommen, dann bearbeite sie in einem neuen Thread
+            new Thread(new AntwortProzess(sock)).start();
         }
     }
 
-    public void run() {
-        try {
-            BufferedWriter writer = new BufferedWriter(
-                    new OutputStreamWriter(csocket.getOutputStream()));
-            String antwort = "This is just a test!";
-            writer.write(antwort);
-            writer.newLine();
-            writer.flush();
-            csocket.close();
-        } catch (IOException e) {
-            System.out.println(e);
+    /**
+     * Runnable, um eingehende Verbindungen zu bearbeiten
+     */
+    private static class AntwortProzess implements Runnable {
+
+        private final Socket socket;
+
+        public AntwortProzess(Socket socket) {
+            this.socket = socket;
+        }
+
+        @Override
+        public void run() {
+            // Diese Methode wird vom Thread gerufen, wenn er startet.
+            try (Socket socket = this.socket) {
+                /*
+                 * Warte zunächst 2 Sekunden. Diese Wartezeit ist nun im eigenen
+                 * Thread und verhindert nicht, dass weitere Verbindungen angenommen
+                 * werden.
+                 */
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException ex) {
+                }
+                // Schreibe eine Zeile Text an den Client zurück.
+                BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+                out.write("This is just a test!\n");
+                out.flush();
+            } catch (IOException ex) {
+            }
         }
     }
 }

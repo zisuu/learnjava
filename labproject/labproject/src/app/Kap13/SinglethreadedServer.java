@@ -6,6 +6,11 @@ import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * Server für die Klasse {@link app.Kap13.Client}, der
+ * alle Verbindungen in nur einem Thread bearbeitet
+ *
+ */
 public class SinglethreadedServer {
 
     private final int port;
@@ -23,10 +28,8 @@ public class SinglethreadedServer {
         if (port < 1024 || port > 65535) {
             throwError(port + " ist nicht im Range der dynamischen TCP Ports von 1024 bis 65535!");
         }
-        while (true){
-            // starte Server und warte bis Verbindung aufgebaut ist
-            new SinglethreadedServer(port).erwarteVerbindung(port);
-        }
+        // starte Server und warte bis Verbindung aufgebaut ist
+        new SinglethreadedServer(port).erwarteVerbindung();
     }
 
     /**
@@ -49,21 +52,28 @@ public class SinglethreadedServer {
         this.port = port;
     }
 
-    public void erwarteVerbindung(Integer port) throws IOException, InterruptedException {
-            ServerSocket server = new ServerSocket(port);
+    /**
+     * Warte auf Verbindung und verarbeite sie
+     * 
+     * @param port
+     * @throws IOException
+     */
+    public void erwarteVerbindung() throws IOException {
+        ServerSocket server = new ServerSocket(port);
+        // Schleife läuft bis sie unterbrochen wird CNTR+C
+        while (true) {
             try (Socket verbindung = server.accept()) {
-                Thread.sleep(2000); // set time delay to 2 seconds
-                verarbeiteVerbindung(verbindung);
+                // warte 2s nach Verbindungsannahme
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException ex) {
+                }
+                // Schreibe ein Text an den Client zurück
+                BufferedWriter out = new BufferedWriter(
+                        new OutputStreamWriter(verbindung.getOutputStream()));
+                out.write("This is just a test!\n");
+                out.flush();
             }
-            server.close();
-    }
-
-    private void verarbeiteVerbindung(Socket verbindung) throws IOException {
-        BufferedWriter writer = new BufferedWriter(
-                new OutputStreamWriter(verbindung.getOutputStream()));
-        String antwort = "This is just a test!";
-        writer.write(antwort);
-        writer.newLine();
-        writer.flush();
+        }
     }
 }
