@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch PingPong",
+            "request": "launch",
+            "mainClass": "app.Kap13.PingPong",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
+            "name": "Launch Testing",
+            "request": "launch",
+            "mainClass": "app.Kap13.Testing",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
             "name": "Launch Zufallsverteilung",
             "request": "launch",
             "mainClass": "app.Kap13.Zufallsverteilung",
