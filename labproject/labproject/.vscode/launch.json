@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Zufallsverteilung",
+            "request": "launch",
+            "mainClass": "app.Kap13.Zufallsverteilung",
+            "projectName": "labproject_3808de47"
+        },
+        {
+            "type": "java",
             "name": "Launch Labthreads",
             "request": "launch",
             "mainClass": "app.Kap13.Labthreads",
