@@ -22,7 +22,7 @@ public class MP3ListenServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Die Playlist-Datei finden
-        File listfile = new File("C:\\\\tmp\\\\playlist.play");
+        File listfile = new File("/tmp/playlist.play");
         //Falls die Datei nicht existiert eine Fehlermeldung senden.
         if (!listfile.exists() || !listfile.canRead()) {
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Kann Playlist-Datei nicht lesen.");

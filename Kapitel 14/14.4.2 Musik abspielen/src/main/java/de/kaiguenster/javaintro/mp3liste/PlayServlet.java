@@ -30,7 +30,7 @@ public class PlayServlet extends HttpServlet {
         //Den Index aus dem URL-Pfad lesen: /play/7 liefert so den Index 7
         int index = Integer.parseInt(req.getPathInfo().substring(1));
         //Die Playlist-Datei lesen        
-        File listfile = new File("C:\\tmp\\playlist.play");
+        File listfile = new File("/tmp/playlist.play");
         if (!listfile.exists() || !listfile.canRead()){
             resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Kann Playlist-Datei nicht lesen.");
             return;
