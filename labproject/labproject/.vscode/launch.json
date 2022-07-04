@@ -6,9 +6,57 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch BeispielAnwendung",
+            "name": "Launch BeispielMenu",
             "request": "launch",
-            "mainClass": "app.Kap16.BeispielAnwendung",
+            "mainClass": "app.Kap16.BeispielMenu",
+            "projectName": "labproject_3808de47",
+            "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch BeispielTextField",
+            "request": "launch",
+            "mainClass": "app.Kap16.BeispielTextField",
+            "projectName": "labproject_3808de47",
+            "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch BeispielChoiceBox",
+            "request": "launch",
+            "mainClass": "app.Kap16.BeispielChoiceBox",
+            "projectName": "labproject_3808de47",
+            "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch BeispielCheckBox",
+            "request": "launch",
+            "mainClass": "app.Kap16.BeispielCheckBox",
+            "projectName": "labproject_3808de47",
+            "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch BeispielButton",
+            "request": "launch",
+            "mainClass": "app.Kap16.BeispielButton",
+            "projectName": "labproject_3808de47",
+            "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch BeispielRadioButton",
+            "request": "launch",
+            "mainClass": "app.Kap16.BeispielRadioButton",
+            "projectName": "labproject_3808de47",
+            "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch BeispielToggleButton",
+            "request": "launch",
+            "mainClass": "app.Kap16.BeispielToggleButton",
             "projectName": "labproject_3808de47",
             "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
         },
