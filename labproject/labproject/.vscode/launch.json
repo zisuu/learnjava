@@ -6,6 +6,94 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch KombinationParallel",
+            "request": "launch",
+            "mainClass": "app.Kap16.animationen.KombinationParallel",
+            "projectName": "labproject_3808de47",
+            "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Interpolierung",
+            "request": "launch",
+            "mainClass": "app.Kap16.animationen.Interpolierung",
+            "projectName": "labproject_3808de47",
+            "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch KombinationSequentiell",
+            "request": "launch",
+            "mainClass": "app.Kap16.animationen.KombinationSequentiell",
+            "projectName": "labproject_3808de47",
+            "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TimelineAnimation",
+            "request": "launch",
+            "mainClass": "app.Kap16.animationen.TimelineAnimation",
+            "projectName": "labproject_3808de47",
+            "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Transition",
+            "request": "launch",
+            "mainClass": "app.Kap16.animationen.Transition",
+            "projectName": "labproject_3808de47",
+            "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TemperaturSteuerung",
+            "request": "launch",
+            "mainClass": "app.Kap16.TemperaturSteuerung",
+            "projectName": "labproject_3808de47",
+            "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch BeispielGridPane",
+            "request": "launch",
+            "mainClass": "app.Kap16.Urlaubsverwaltung",
+            "projectName": "labproject_3808de47",
+            "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch BeispielGridPane",
+            "request": "launch",
+            "mainClass": "app.Kap16.BeispielGridPane",
+            "projectName": "labproject_3808de47",
+            "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch BeispielVBox",
+            "request": "launch",
+            "mainClass": "app.Kap16.BeispielVBox",
+            "projectName": "labproject_3808de47",
+            "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch BeispielHBox",
+            "request": "launch",
+            "mainClass": "app.Kap16.BeispielHBox",
+            "projectName": "labproject_3808de47",
+            "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch BeispielBoarderPane",
+            "request": "launch",
+            "mainClass": "app.Kap16.BeispielBoarderPane",
+            "projectName": "labproject_3808de47",
+            "vmArgs": "--module-path /Users/Dave/Downloads/javafx-sdk-18.0.1/lib/ --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "Launch BeispielMenu",
             "request": "launch",
             "mainClass": "app.Kap16.BeispielMenu",
